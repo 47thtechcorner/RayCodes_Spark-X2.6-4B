@@ -1,0 +1,15 @@
+{
+  "project_name": "Spark-X2.6-4B Autonomous Web Research & Code Assistant",
+  "task": "Extract latest API docs from the web, synthesize documentation into 1M context, and fix slow website code using multi-tool thinking",
+  "model_id": "SparkLLM/Spark-X2.6-4B",
+  "ollama_host": "http://127.0.0.1:11434",
+  "reasoning_budget": "high",
+  "system_prompt": "You are Spark-X2.6-4B, a friendly local AI assistant that reads documentation, diagnoses slow code, and generates fixes automatically using your tools.",
+  "research_context": {
+    "topic": "Python Web Scraper & Fast Search App",
+    "web_source": "https://docs.python.org/3/library/urllib.request.html",
+    "problem_description": "My script crashes when fetching 100 articles because it keeps every downloaded article forever in memory and never closes network connections.",
+    "buggy_file": "app/scraper.py",
+    "user_code": "import requests\n\ncache = []\n\ndef get_page(url):\n    res = requests.get(url)\n    cache.append(res.text)  # never cleans up memory\n    return res.text"
+  }
+}
